@@ -8,6 +8,7 @@ const colorList = <Color>[
   Colors.purple,
   Colors.orange,
   Colors.cyanAccent,
+  Colors.purpleAccent,
 ];
 
 class AppTheme {
