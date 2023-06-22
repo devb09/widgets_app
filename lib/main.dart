@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 1).getTheme(),
-      home: Scaffold(
+      home: const Scaffold(
         body: Center(
           child: Text('Hello World!'),
         ),
