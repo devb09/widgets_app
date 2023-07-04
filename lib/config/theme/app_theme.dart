@@ -15,6 +15,11 @@ class AppTheme {
         assert(selectedColor < colorList.length,
             'Selected color must be less than ${colorList.length - 1}');
 
-  ThemeData getTheme() =>
-      ThemeData(useMaterial3: true, colorSchemeSeed: colorList[selectedColor]);
+  ThemeData getTheme() => ThemeData(
+      useMaterial3: true,
+      colorSchemeSeed: colorList[selectedColor],
+      appBarTheme: AppBarTheme(
+          centerTitle: false,
+          color: colorList[selectedColor],
+          titleTextStyle: TextStyle(color: Colors.white, fontSize: 16.0)));
 }
