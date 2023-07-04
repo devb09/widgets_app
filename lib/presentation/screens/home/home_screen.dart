@@ -48,6 +48,9 @@ class _MenuListTile extends StatelessWidget {
       leading: Icon(menuItem.icon, color: colors.primary,),
       trailing: Icon(Icons.chevron_right_rounded),
       subtitle: Text(menuItem.subTitle),
+      onTap: () {
+        Navigator.pushNamed(context, menuItem.link);
+      },
     );
   }
 }
