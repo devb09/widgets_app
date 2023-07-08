@@ -10,8 +10,19 @@ class CardsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cards'),
+        title: _CardView(),
       ),
     );
+  }
+}
+
+class _CardView extends StatelessWidget {
+  const _CardView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Cards');
   }
 }
