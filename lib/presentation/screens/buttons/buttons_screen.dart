@@ -64,8 +64,35 @@ class _Buttons extends StatelessWidget {
             style: ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll(colors.primary),
                 iconColor: const MaterialStatePropertyAll(Colors.white)),
-          )
+          ),
+          const Custombutton()
         ]),
+      ),
+    );
+  }
+}
+
+class Custombutton extends StatelessWidget {
+  const Custombutton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: Material(
+        color: colors.primary,
+        child: InkWell(
+          onTap: () {},
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            child: Text(
+              'Hola mundo',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
       ),
     );
   }
