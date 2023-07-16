@@ -18,9 +18,9 @@ class CardsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Card view'),
+        title: const Text('Card view'),
       ),
-      body: _CardView(),
+      body: const _CardView(),
     );
   }
 }
@@ -43,6 +43,17 @@ class _CardView extends StatelessWidget {
                 elevation: card['elevation'],
                 label: card['label'],
               )),
+          ...cards.map((card) => _CardType3(
+                elevation: card['elevation'],
+                label: card['label'],
+              )),
+          ...cards.map((card) => _CardType4(
+                elevation: card['elevation'],
+                label: card['label'],
+              )),
+          const SizedBox(
+            height: 20,
+          )
         ],
       ),
     );
@@ -65,7 +76,8 @@ class _CardType1 extends StatelessWidget {
             Align(
                 alignment: Alignment.centerRight,
                 child: IconButton(
-                    onPressed: () {}, icon: Icon(Icons.more_vert_outlined))),
+                    onPressed: () {},
+                    icon: const Icon(Icons.more_vert_outlined))),
             Align(
               alignment: Alignment.bottomLeft,
               child: Text(label),
@@ -88,7 +100,7 @@ class _CardType2 extends StatelessWidget {
 
     return Card(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
+          borderRadius: const BorderRadius.all(Radius.circular(12)),
           side: BorderSide(color: colors.outline)),
       elevation: elevation,
       child: Padding(
@@ -98,13 +110,84 @@ class _CardType2 extends StatelessWidget {
             Align(
                 alignment: Alignment.centerRight,
                 child: IconButton(
-                    onPressed: () {}, icon: Icon(Icons.more_vert_outlined))),
+                    onPressed: () {},
+                    icon: const Icon(Icons.more_vert_outlined))),
             Align(
               alignment: Alignment.bottomLeft,
               child: Text('$label - outlined'),
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _CardType3 extends StatelessWidget {
+  final String label;
+  final double elevation;
+  const _CardType3({required this.label, required this.elevation});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
+    return Card(
+      color: colors.surfaceVariant,
+      elevation: elevation,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+        child: Column(
+          children: [
+            Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.more_vert_outlined))),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Text('$label - filled'),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _CardType4 extends StatelessWidget {
+  final String label;
+  final double elevation;
+  const _CardType4({required this.label, required this.elevation});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      clipBehavior: Clip.hardEdge,
+      elevation: elevation,
+      child: Stack(
+        children: [
+          Image.network(
+            'https://picsum.photos/id/${elevation.toInt()}/600/250',
+            height: 350,
+            fit: BoxFit.cover,
+          ),
+          Align(
+              alignment: Alignment.centerRight,
+              child: Container(
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius:
+                        BorderRadius.only(bottomLeft: Radius.circular(10))),
+                child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.more_vert_outlined)),
+              )),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Text('$label - filled'),
+          )
+        ],
       ),
     );
   }

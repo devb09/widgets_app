@@ -21,5 +21,5 @@ class AppTheme {
       appBarTheme: AppBarTheme(
           centerTitle: false,
           color: colorList[selectedColor],
-          titleTextStyle: TextStyle(color: Colors.white, fontSize: 16.0)));
+          titleTextStyle: const TextStyle(color: Colors.white, fontSize: 16.0)));
 }
