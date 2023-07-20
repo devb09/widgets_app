@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SnackbarScreen extends StatelessWidget {
   static const name = 'snackbar_screen';
@@ -18,6 +19,22 @@ class SnackbarScreen extends StatelessWidget {
     ScaffoldMessenger.of(context).showSnackBar(snackbar);
   }
 
+  void openDialog(BuildContext context) {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('¿Estás seguro?'),
+        content: const Text(
+            'Non cillum consectetur consectetur fugiat amet. Sunt do ad excepteur deserunt aute aute anim ea consectetur ad. Aute sunt tempor deserunt consequat sunt elit non labore. Aliquip elit in ad deserunt. Fugiat ullamco duis ad ex amet cupidatat consectetur exercitation eu Lorem.'),
+        actions: [
+          TextButton(onPressed: () => context.pop(), child: Text('Cancelar')),
+          FilledButton(onPressed: () => context.pop(), child: Text('Aceptar'))
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +52,8 @@ class SnackbarScreen extends StatelessWidget {
                 },
                 child: const Text('Licensias usadas')),
             FilledButton.tonal(
-                onPressed: () {}, child: const Text('Mostrar dialogo')),
+                onPressed: () => openDialog(context),
+                child: const Text('Mostrar dialogo')),
           ],
         ),
       ),
