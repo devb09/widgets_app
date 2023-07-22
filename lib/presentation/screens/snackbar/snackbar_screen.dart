@@ -47,7 +47,7 @@ class SnackbarScreen extends StatelessWidget {
                 onPressed: () {
                   showAboutDialog(context: context, children: [
                     const Text(
-                        'Lorem enim fugiat anim non officia sunt non laboris laboris. Ex velit nisi consequat aute est do do Lorem pariatur reprehenderit ipsum culpa anim nisi. Irure quis amet labore esse ea minim sunt esse irure non aute. Labore anim deserunt non magna quis duis dolor duis. Consequat dolore consectetur amet excepteur occaecat irure et Lorem est nostrud sunt cillum commodo sint. Non eu irure Lorem enim sit amet voluptate enim non cupidatat irure enim. Excepteur irure ut est esse eu id sint velit nisi adipisicing consequat Lorem sit est.')
+                        'Incididunt consequat sint in eu eu esse eu esse aute.')
                   ]);
                 },
                 child: const Text('Licensias usadas')),
