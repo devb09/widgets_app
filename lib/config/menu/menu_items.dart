@@ -37,6 +37,6 @@ const appMenuTiems = <MenuItem>[
   MenuItem(
       title: 'Listas',
       subTitle: 'Debe seguir',
-      link: '/snackbars',
+      link: '/lists',
       icon: Icons.info_outline),
 ];
