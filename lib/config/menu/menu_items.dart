@@ -35,8 +35,8 @@ const appMenuTiems = <MenuItem>[
       link: '/snackbars',
       icon: Icons.info_outline),
   MenuItem(
-      title: 'Snackbars y dialogs',
-      subTitle: 'Indicadores en pantalla',
+      title: 'Listas',
+      subTitle: 'Debe seguir',
       link: '/snackbars',
       icon: Icons.info_outline),
 ];
